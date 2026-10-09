@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 阶段指示器 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_phase1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="① 认字"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/phase_active"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/tv_phase2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="② 书写"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/phase_inactive"
+                android:textColor="#999999"/>
+
+            <TextView
+                android:id="@+id/tv_phase3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="③ 练习"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/phase_inactive"
+                android:textColor="#999999"/>
+        </LinearLayout>
+
+        <!-- 第一阶段：认字 -->
+        <LinearLayout
+            android:id="@+id/layout_recognize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_big_char"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:textSize="120sp"
+                android:textStyle="bold"
+                android:textColor="#333333"/>
+
+            <TextView
+                android:id="@+id/tv_pinyin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:textColor="#FF6B35"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tv_strokes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="笔画"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:padding="8dp"
+                    android:background="@drawable/card_bg"/>
+
+                <TextView
+                    android:id="@+id/tv_radical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="部首"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:padding="8dp"
+                    android:background="@drawable/card_bg"
+                    android:layout_marginStart="12dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_meaning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="释义"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:padding="16dp"
+                android:background="@drawable/card_bg"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组词"
+                android:textSize="14sp"
+                android:textColor="#999999"
+                android:layout_marginBottom="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tv_word1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:padding="8dp"
+                    android:background="@drawable/card_bg"/>
+
+                <TextView
+                    android:id="@+id/tv_word2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:padding="8dp"
+                    android:background="@drawable/card_bg"
+                    android:layout_marginStart="12dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="例句"
+                android:textSize="14sp"
+                android:textColor="#999999"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_sentence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:padding="16dp"
+                android:background="@drawable/card_bg"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btn_play_sound"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="🔊 听发音"
+                android:textSize="16sp"
+                android:backgroundTint="#004E89"
+                android:textColor="@color/white"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_to_write"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="进入书写 →"
+                android:textSize="18sp"
+                android:backgroundTint="#FF6B35"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- 第二阶段：书写 -->
+        <LinearLayout
+            android:id="@+id/layout_write"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.zhilearn.app.view.TianZiGeView
+                android:id="@+id/tianzige_view"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tv_score_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="#FF6B35"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btn_clear"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="重写"
+                    android:backgroundTint="#E0E0E0"
+                    android:textColor="#333333"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="提交评分"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_to_practice"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="进入练习 →"
+                android:textSize="18sp"
+                android:backgroundTint="#FF6B35"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
+        <!-- 第三阶段：练习 -->
+        <LinearLayout
+            android:id="@+id/layout_practice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:padding="24dp"
+                android:background="@drawable/card_bg"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btn_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text=""
+                android:textSize="20sp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_answer2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text=""
+                android:textSize="20sp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_answer3"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text=""
+                android:textSize="20sp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tv_practice_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btn_finish"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="完成学习"
+                android:textSize="18sp"
+                android:backgroundTint="#FF6B35"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- 完成阶段 -->
+        <LinearLayout
+            android:id="@+id/layout_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_complete_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:padding="32dp"
+                android:background="@drawable/card_bg"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btn_learn_more"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="学习下一个字"
+                android:textSize="18sp"
+                android:backgroundTint="#FF6B35"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
